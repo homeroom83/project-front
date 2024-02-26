@@ -54,6 +54,16 @@ const routes = [
         }
       },
       {
+        path: 'exchange',
+        name: 'AdminExchange',
+        component: () => import('@/views/admin/ExchangeView.vue'),
+        meta: {
+          title: 'Sneaker | 交流區管理',
+          login: true,
+          adime: true
+        }
+      },
+      {
         path: 'members',
         name: 'AdminMembers',
         component: () => import('@/views/admin/MembersView.vue'),

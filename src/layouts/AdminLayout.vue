@@ -37,6 +37,7 @@ const user = useUserStore()
 const menu = computed(() => {
   return [
     { to: '/admin/products', text: '商品管理' },
+    { to: '/admin/exchange', text: '交流區管理' },
     { to: '/admin/members', text: '會員管理' },
     { to: '/', text: '回首頁' }
   ]
