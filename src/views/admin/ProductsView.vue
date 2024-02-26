@@ -9,21 +9,13 @@
     </v-container>
   </v-navigation-drawer>
   <v-container>
-    <v-data-table-server
-      v-model:items-per-page="tableItemsPerPage"
-      v-model:sort-by="tableSortBy"
-      v-model:page="tablePage"
-      :items="tableProducts"
-      :headers="tableHeaders"
-      :loading="tableLoading"
-      :items-length="tableItemsLength"
-      :search="tableSearch"
-      @update:items-per-page="tableLoadItems"
-      @update:sort-by="tableLoadItems"
-      @update:page="tableLoadItems"
-      hover>
+    <v-data-table-server v-model:items-per-page="tableItemsPerPage" v-model:sort-by="tableSortBy" v-model:page="tablePage"
+      :items="tableProducts" :headers="tableHeaders" :loading="tableLoading" :items-length="tableItemsLength"
+      :search="tableSearch" @update:items-per-page="tableLoadItems" @update:sort-by="tableLoadItems"
+      @update:page="tableLoadItems" hover>
       <template #top>
-        <v-text-field label="搜尋" append-icon="mdi-magnify" v-model="tableSearch" @click:append="tableApplySearch" @keydown.enter="tableApplySearch"></v-text-field>
+        <v-text-field label="搜尋" append-icon="mdi-magnify" v-model="tableSearch" @click:append="tableApplySearch"
+          @keydown.enter="tableApplySearch"></v-text-field>
       </template>
       <template #[`item.image`]="{ item }">
         <v-img :src="item.image" height="50px"></v-img>
@@ -255,9 +247,6 @@ const tableApplySearch = () => {
   tableLoadItems()
 }
 
-const filter = () => {
-  if
-}
 </script>
 
 <style>
