@@ -1,12 +1,7 @@
 <template>
-  <v-carousel hide-delimiters>
-    <v-carousel-item src="src\assets\dunk-green.jpg">
-    </v-carousel-item>
-
-    <v-carousel-item src="src\assets\dunk-pink.jpg">
-    </v-carousel-item>
-
-    <v-carousel-item src="src\assets\zoom-vomero-5.jpg">
+  <v-carousel hide-delimiter-background cycle show-arrows="hover" interval="3000">
+    <v-carousel-item v-for="image in imagesNike" :key="image.src">
+      <v-img :src="image.src"></v-img>
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -14,10 +9,11 @@
 <script setup>
 import { computed } from 'vue'
 
-const images = computed(() => {
+const imagesNike = computed(() => {
   return [
-    { title: 'dunk-green', to: '/products/nike' src: 'https://github.com/homeroom83/project-front/blob/main/src/assets/dunk-green.jpg' }
-
+    { title: 'dunk-green', to: '/products/nike', src: 'https://raw.githubusercontent.com/homeroom83/project-front/main/src/assets/nike/dunk-green.jpg' },
+    { title: 'dunk-pink', to: '/products/nike', src: 'https://raw.githubusercontent.com/homeroom83/project-front/main/src/assets/nike/dunk-pink.jpg' },
+    { title: 'zoom-vomero5', to: '/products/nike', src: 'https://raw.githubusercontent.com/homeroom83/project-front/main/src/assets/nike/zoom-vomero-5.jpg' }
   ]
 })
 </script>

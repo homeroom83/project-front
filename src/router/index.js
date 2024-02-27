@@ -45,62 +45,46 @@ const routes = [
           title: 'Sneaker | 商品總覽',
           login: false,
           admin: false
-        },
-        {
-        path: '/',
-        component: () => import('@/layouts/FrontLayout.vue'),
-        
-          {
-        path: '',
-        name: 'Home',
-        component: () => import('@/views/front/HomeView.vue'),
-        meta: {
-          title: 'Sneaker',
-          login: false,
-          admin: false
         }
       }
     ]
   },
-      }
-]
-  },
-{
-  path: '/admin',
+  {
+    path: '/admin',
     component: () => import('@/layouts/AdminLayout.vue'),
-      children: [
-        {
-          path: 'products',
-          name: 'AdminProducts',
-          component: () => import('@/views/admin/ProductsView.vue'),
-          meta: {
-            title: 'Sneaker | 商品管理',
-            login: true,
-            adime: true
-          }
-        },
-        {
-          path: 'exchange',
-          name: 'AdminExchange',
-          component: () => import('@/views/admin/ExchangeView.vue'),
-          meta: {
-            title: 'Sneaker | 交流區管理',
-            login: true,
-            adime: true
-          }
-        },
-        {
-          path: 'members',
-          name: 'AdminMembers',
-          component: () => import('@/views/admin/MembersView.vue'),
-          meta: {
-            title: 'Sneaker | 會員管理',
-            login: true,
-            adime: true
-          }
+    children: [
+      {
+        path: 'products',
+        name: 'AdminProducts',
+        component: () => import('@/views/admin/ProductsView.vue'),
+        meta: {
+          title: 'Sneaker | 商品管理',
+          login: true,
+          adime: true
         }
-      ]
-}
+      },
+      {
+        path: 'exchange',
+        name: 'AdminExchange',
+        component: () => import('@/views/admin/ExchangeView.vue'),
+        meta: {
+          title: 'Sneaker | 交流區管理',
+          login: true,
+          adime: true
+        }
+      },
+      {
+        path: 'members',
+        name: 'AdminMembers',
+        component: () => import('@/views/admin/MembersView.vue'),
+        meta: {
+          title: 'Sneaker | 會員管理',
+          login: true,
+          adime: true
+        }
+      }
+    ]
+  }
 ]
 
 const router = createRouter({
