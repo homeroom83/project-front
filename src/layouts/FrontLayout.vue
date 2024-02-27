@@ -2,9 +2,9 @@
   <!-- 手機側欄 -->
   <v-navigation-drawer v-model="drawer" v-if="isXs || isSm" color="orange-lighten-5">
     <v-list v-model="list" >
-      <v-list-group v-for="item in  menu " :key="item">
+      <v-list-group v-for="item in menu" :key="item">
         <template v-slot:activator="{ props }" >
-          <v-list-item v-bind="props" :title="item.title" class="text-center"></v-list-item>
+          <v-list-item v-bind="props" :title="item.title" :to="item.to" class="text-center"></v-list-item>
         </template>
         <template v-for=" page in item.pages " :key="page.to">
           <v-list-item class="bg-white" :to="page.to" v-if="page.show" >
@@ -84,9 +84,10 @@ const menu = computed(() => {
     {
       title: '商品總覽',
       pages: [
-        { to: '/register', text: 'Nike', show: true },
-        { to: '/login', text: 'New Balance', show: true }
+        { to: '/products/nike', text: 'Nike', show: true },
+        { to: '/products/newbalance', text: 'New Balance', show: true }
       ]
+      // to: '/products/new'
     },
     {
       title: '交流專區',

@@ -1,3 +1,12 @@
 <template>
-  <h1>product</h1>
+  <v-container>
+    <v-row>
+      <v-col>
+        <h1>product</h1>
+      </v-col>
+      <v-col>
+        <router-view></router-view>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>

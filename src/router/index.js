@@ -39,13 +39,39 @@ const routes = [
       },
       {
         path: 'products',
-        name: 'Products',
         component: () => import('@/views/front/ProductsView.vue'),
-        meta: {
-          title: 'Sneaker | 商品總覽',
-          login: false,
-          admin: false
-        }
+        children: [
+          {
+            path: 'new',
+            name: 'New',
+            component: () => import('@/views/products/NewView.vue'),
+            meta: {
+              title: 'Sneaker | 當月新品',
+              login: false,
+              admin: false
+            }
+          },
+          {
+            path: 'nike',
+            name: 'Nike',
+            component: () => import('@/views/products/NikeView.vue'),
+            meta: {
+              title: 'Sneaker | Nike',
+              login: false,
+              admin: false
+            }
+          },
+          {
+            path: 'newbalance',
+            name: 'New Balance',
+            component: () => import('@/views/products/NewbalanceView.vue'),
+            meta: {
+              title: 'Sneaker | New Balance',
+              login: false,
+              admin: false
+            }
+          }
+        ]
       }
     ]
   },
