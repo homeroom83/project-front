@@ -70,6 +70,52 @@ const routes = [
               login: false,
               admin: false
             }
+          },
+          {
+            path: 'products/:id',
+            name: 'product',
+            component: () => import('@/views/products/ProductView.vue'),
+            meta: {
+              title: 'Sneaker | 商品',
+              login: false,
+              admin: false
+            }
+          }
+        ]
+      },
+      {
+        path: 'productsExchange',
+        component: () => import('@/views/front/productsExchangeView.vue'),
+        children: [
+          {
+            path: 'newExchange',
+            name: 'new',
+            component: () => import('@/views/productsExchange/NewView.vue'),
+            meta: {
+              title: 'Sneaker | 當月新品 - 交流專區',
+              login: false,
+              admin: false
+            }
+          },
+          {
+            path: 'nikeExchange',
+            name: 'nike',
+            component: () => import('@/views/productsExchange/NikeView.vue'),
+            meta: {
+              title: 'Sneaker | Nike - 交流專區',
+              login: false,
+              admin: false
+            }
+          },
+          {
+            path: 'newbalanceExchange',
+            name: 'newbalance',
+            component: () => import('@/views/productsExchange/NewbalanceView.vue'),
+            meta: {
+              title: 'Sneaker | New Balance - 交流專區',
+              login: false,
+              admin: false
+            }
           }
         ]
       }

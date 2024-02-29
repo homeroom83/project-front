@@ -1,13 +1,13 @@
 <template>
   <!-- 手機側欄 -->
   <v-navigation-drawer v-model="drawer" v-if="isXs || isSm" color="orange-lighten-5">
-    <v-list v-model="list" >
+    <v-list v-model="list">
       <v-list-group v-for="item in menu" :key="item">
-        <template v-slot:activator="{ props }" >
+        <template v-slot:activator="{ props }">
           <v-list-item v-bind="props" :title="item.title" :to="item.to" class="text-center"></v-list-item>
         </template>
         <template v-for=" page in item.pages " :key="page.to">
-          <v-list-item class="bg-white" :to="page.to" v-if="page.show" >
+          <v-list-item class="bg-white" :to="page.to" v-if="page.show">
             <v-list-item>{{ page.text }}</v-list-item>
           </v-list-item>
         </template>
@@ -35,7 +35,7 @@
         <!-- 選項列表 -->
         <v-menu open-on-hover v-for="item in menu" :key="item">
           <template v-slot:activator="{ props }">
-            <v-list-item v-bind="props" :title="item.title" style="cursor: pointer;"></v-list-item>
+            <v-list-item v-bind="props" :title="item.title" style="cursor: pointer;" :to="item.to"></v-list-item>
           </template>
           <v-list>
             <template v-for="page in item.pages " :key="page">
@@ -86,15 +86,16 @@ const menu = computed(() => {
       pages: [
         { to: '/products/nike', text: 'Nike', show: true },
         { to: '/products/newbalance', text: 'New Balance', show: true }
-      ]
-      // to: '/products/new'
+      ],
+      to: '/products/new'
     },
     {
       title: '交流專區',
       pages: [
-        { to: '/register', text: 'Nike', show: true },
-        { to: '/login', text: 'New Balance', show: true }
-      ]
+        { to: '/productsExchange/nikeExchange', text: 'Nike', show: true },
+        { to: '/productsExchange/newbalanceExchange', text: 'New Balance', show: true }
+      ],
+      to: '/productsExchange/newExchange'
     },
     {
       title: '會員專區',
@@ -141,5 +142,9 @@ const logout = async () => {
 .sneaker {
   text-decoration: none;
   color: black
+}
+
+* {
+  margin: 0;
 }
 </style>

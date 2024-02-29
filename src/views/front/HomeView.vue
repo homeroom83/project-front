@@ -1,16 +1,20 @@
 <template>
-  <div>
-    <v-carousel hide-delimiter-background cycle show-arrows="hover" interval="5000">
-      <v-carousel-item v-for="image in imagesNike" :key="image.src">
+  <v-carousel hide-delimiter-background cycle show-arrows="hover" interval="5000">
+    <v-carousel-item v-for="image in imagesNike" :key="image.src">
+      <v-sheet color="#F6F6F6" height="100%">
+        <v-img :src="image.src">
+          <v-list-item :to="image.to"></v-list-item>
+        </v-img>
+      </v-sheet>
+    </v-carousel-item>
+  </v-carousel>
+  <v-carousel hide-delimiter-background cycle show-arrows="hover" :interval="isSecondCarouselStarted ? 5000 : 0">
+    <v-carousel-item v-for="image in imagesNb" :key="image.src">
+      <v-sheet color="#F1F1F1" height="100%">
         <v-img :src="image.src"></v-img>
-      </v-carousel-item>
-    </v-carousel>
-    <v-carousel hide-delimiter-background cycle show-arrows="hover" :interval="isSecondCarouselStarted ? 5000 : 0">
-      <v-carousel-item v-for="image in imagesNb" :key="image.src">
-        <v-img :src="image.src"></v-img>
-      </v-carousel-item>
-    </v-carousel>
-  </div>
+      </v-sheet>
+    </v-carousel-item>
+  </v-carousel>
 </template>
 
 <script setup>

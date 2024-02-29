@@ -44,9 +44,9 @@
           </v-text-field>
           <v-checkbox label="上架" v-model="sell.value.value" :error-messages="sell.errorMessage.value">
           </v-checkbox>
-          <vue-file-agent v-model="fileRecords" v-model:rawModelValue="rawFileRecords" accept="image/jpeg,image/png"
-            deletable :error-text="{ type: '檔案格式不支援', size: '檔案超過 5MB 大小限制' }" help-text="選擇圖片或拖曳到這裡" :max-files="10"
-            max-size="5MB" ref="fileAgent">
+          <vue-file-agent v-model="fileRecords" v-model:rawModelValue="rawFileRecords"
+            accept="image/jpeg,image/png,image/webp" deletable :error-text="{ type: '檔案格式不支援', size: '檔案超過 5MB 大小限制' }"
+            help-text="選擇圖片或拖曳到這裡" :max-files="10" max-size="5MB" ref="fileAgent">
           </vue-file-agent>
         </v-card-text>
         <v-card-actions>
